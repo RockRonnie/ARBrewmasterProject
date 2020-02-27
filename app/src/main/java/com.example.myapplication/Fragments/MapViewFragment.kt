@@ -155,6 +155,7 @@ class MapViewFragment(context: Context): Fragment(), PermissionsListener, Locati
     private fun getRoute(origin: Point, destination: Point) {
         NavigationRoute.builder()
             .accessToken(Mapbox.getAccessToken())
+            .profile("walking")
             .origin(origin)
             .destination(destination)
             .build()
