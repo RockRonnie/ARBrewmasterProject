@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.example.myapplication.R
 import com.mapbox.android.core.location.LocationEngine
@@ -25,6 +26,8 @@ import com.mapbox.mapboxsdk.maps.MapboxMap
 import com.mapbox.mapboxsdk.plugins.locationlayer.LocationLayerPlugin
 import com.mapbox.mapboxsdk.plugins.locationlayer.modes.CameraMode
 import com.mapbox.mapboxsdk.plugins.locationlayer.modes.RenderMode
+import com.mapbox.services.android.navigation.ui.v5.NavigationLauncher
+import com.mapbox.services.android.navigation.ui.v5.NavigationLauncherOptions
 import com.mapbox.services.android.navigation.ui.v5.route.NavigationMapRoute
 import com.mapbox.services.android.navigation.v5.navigation.NavigationRoute
 import retrofit2.Call
@@ -43,6 +46,7 @@ class MapViewFragment: Fragment(), PermissionsListener, LocationEngineListener {
 
     private lateinit var mapView: MapView
     private lateinit var map: MapboxMap
+    private lateinit var startButton: Button
 
     //Starting point and destination variables
     private lateinit var originLocation: Location
@@ -74,7 +78,11 @@ class MapViewFragment: Fragment(), PermissionsListener, LocationEngineListener {
         // Mapbox access token is configured here. This needs to be called either in your application
         // object or in the same activity which contains the mapview.
         Mapbox.getInstance(ctx, getString(R.string.access_token))
-
+        startButton = view.findViewById(R.id.startButton)
+        startButton.setOnClickListener{
+            val options = NavigationLauncherOptions.builder().origin(originPosition).destination(destinationPosition).shouldSimulateRoute(true).build()
+            NavigationLauncher.startNavigation(activity,options)
+        }
         //Setup the MapView
         mapView = view.findViewById(R.id.mapView)
         mapView.onCreate(savedInstanceState)
@@ -88,6 +96,8 @@ class MapViewFragment: Fragment(), PermissionsListener, LocationEngineListener {
                 destinationPosition = Point.fromLngLat(point.longitude,point.latitude)
                 originPosition = Point.fromLngLat(originLocation.longitude, originLocation.latitude)
                 getRoute(originPosition, destinationPosition)
+                startButton.isEnabled = true
+                startButton.setBackgroundResource(R.color.mapboxBlue)
             }
             enableLocation()
         }
