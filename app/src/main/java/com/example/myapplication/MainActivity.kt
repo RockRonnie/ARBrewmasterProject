@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var myManager: FragmentManager
     lateinit var myTransaction: FragmentTransaction
     lateinit var toggle: Button
-    private var state: String = ""
+    private var state: String = "map"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
