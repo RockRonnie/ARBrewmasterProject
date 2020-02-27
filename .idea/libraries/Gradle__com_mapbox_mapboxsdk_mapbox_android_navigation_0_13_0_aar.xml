@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="Gradle: com.mapbox.mapboxsdk:mapbox-android-navigation:0.13.0@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/dd7dccad65fbdd39d02b6b3bb0453eeb/jetified-mapbox-android-navigation-0.13.0/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/dd7dccad65fbdd39d02b6b3bb0453eeb/jetified-mapbox-android-navigation-0.13.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/dd7dccad65fbdd39d02b6b3bb0453eeb/jetified-mapbox-android-navigation-0.13.0/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mapbox.mapboxsdk/mapbox-android-navigation/0.13.0/d74f82e96be89c057d70c667e470997e77ea1348/mapbox-android-navigation-0.13.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.mapbox.mapboxsdk/mapbox-android-navigation/0.13.0/f12a4909214f72dea77950bc6160909eae639805/mapbox-android-navigation-0.13.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
