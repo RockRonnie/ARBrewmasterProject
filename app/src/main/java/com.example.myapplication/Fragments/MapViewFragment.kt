@@ -32,7 +32,14 @@ import retrofit2.Callback
 import retrofit2.Response
 
 
-class MapViewFragment(context: Context): Fragment(), PermissionsListener, LocationEngineListener {
+class MapViewFragment: Fragment(), PermissionsListener, LocationEngineListener {
+
+    companion object {
+
+        fun newInstance(): MapViewFragment {
+            return MapViewFragment()
+        }
+    }
 
     private lateinit var mapView: MapView
     private lateinit var map: MapboxMap
@@ -49,14 +56,15 @@ class MapViewFragment(context: Context): Fragment(), PermissionsListener, Locati
     private var navigationMapRoute: NavigationMapRoute? = null
 
 
-    val ctx = context
+    private lateinit var ctx: Context
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater?.inflate(R.layout.mapview_fragment,container,false)
+        ctx = activity as Context
+        return inflater.inflate(R.layout.mapview_fragment,container,false)
     }
 
 
