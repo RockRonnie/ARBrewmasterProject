@@ -13,6 +13,9 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
+        ndk {
+            abiFilters 'armeabi-v7a', 'x86'
+        }
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -47,4 +50,6 @@ dependencies {
     }
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
     implementation 'com.google.android.material:material:1.0.0'
+    implementation project(':unityLibrary')
+    implementation fileTree(dir: project(':unityLibrary').getProjectDir().toString() + ('\\libs'), include: ['*.jar'])
 }

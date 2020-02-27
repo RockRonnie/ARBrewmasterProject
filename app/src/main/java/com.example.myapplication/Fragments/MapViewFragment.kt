@@ -40,7 +40,6 @@ import retrofit2.Response
 class MapViewFragment: Fragment(), PermissionsListener, LocationEngineListener {
 
     companion object {
-
         fun newInstance(): MapViewFragment {
             return MapViewFragment()
         }

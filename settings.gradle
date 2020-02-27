@@ -1,2 +1,4 @@
 include ':app'
 rootProject.name='My Application'
+include ':unityLibrary'
+project(':unityLibrary').projectDir=new File('..\\UnityGameDemo\\unityLibrary')
