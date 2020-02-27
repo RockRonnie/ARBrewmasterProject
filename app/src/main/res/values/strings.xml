@@ -3,4 +3,7 @@
     <string name="access_token">pk.eyJ1IjoiYXRob2xvcyIsImEiOiJjazcxdHhuZDIwMHJsM2dvZm50M25rMnh6In0.D_F0hHFTdW7814dJpzbYRA</string>
     <string name="mapText">Mapbox</string>
     <string name="start_navigating">Start Navigating</string>
+    <string name="ar_fragment">AR FRAGMENT</string>
+    <string name="map">Map</string>
+    <string name="ar">AR</string>
 </resources>

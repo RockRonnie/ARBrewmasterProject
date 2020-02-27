@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
 import com.example.myapplication.R
 import com.mapbox.android.core.location.LocationEngine
 import com.mapbox.android.core.location.LocationEngineListener
@@ -83,6 +85,7 @@ class MapViewFragment: Fragment(), PermissionsListener, LocationEngineListener {
             val options = NavigationLauncherOptions.builder().origin(originPosition).destination(destinationPosition).shouldSimulateRoute(true).build()
             NavigationLauncher.startNavigation(activity,options)
         }
+
         //Setup the MapView
         mapView = view.findViewById(R.id.mapView)
         mapView.onCreate(savedInstanceState)
