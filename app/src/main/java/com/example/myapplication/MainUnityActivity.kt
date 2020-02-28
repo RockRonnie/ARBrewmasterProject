@@ -32,7 +32,7 @@ class MainUnityActivity : OverrideUnityActivity() {
         if (intent.extras!!.containsKey("doQuit")) if (mUnityPlayer != null) {
             finish()
         }
-        else if (intent.extras!!.containsKey("playerName")) {
+        if (intent.extras!!.containsKey("playerName")) {
             Log.d("playername extra",intent.extras!!.getString("playerName").toString())
             playername = intent.extras!!.getString("playerName")
                // UnityPlayer.UnitySendMessage("PlayerNameChange","changeName",intent.extras!!.getString("playerName").toString())

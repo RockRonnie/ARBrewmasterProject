@@ -85,7 +85,7 @@ class MainActivity : AppCompatActivity(), ArViewFragment.UnityRunning {
                 }
             }
         }
-        else if(intent.extras!!.containsKey("newCommand")){
+        if(intent.extras!!.containsKey("newCommand")){
             when (intent.extras!!.getString("newCommand")){
                 "map" -> {changeFragment("map")}
                 "ar" -> {changeFragment("ar")}
