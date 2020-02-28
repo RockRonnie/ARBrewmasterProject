@@ -52,10 +52,11 @@ class ArViewFragment: Fragment() {
         }
     }
     private fun validate(): Boolean {
-        return (playerInput.text != null)
+        return playerInput.text != null
     }
     private fun startGame(){
         if(validate()){
+            Log.d("playerInput", playerInput.text.toString())
             try {
                 Log.d("main", "Starting unity")
                 listener.unityIsRunning(true)
