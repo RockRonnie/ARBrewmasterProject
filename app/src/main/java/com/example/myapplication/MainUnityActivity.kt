@@ -35,13 +35,13 @@ class MainUnityActivity : OverrideUnityActivity() {
         if (intent.extras!!.containsKey("playerName")) {
             Log.d("playername extra",intent.extras!!.getString("playerName").toString())
             playername = intent.extras!!.getString("playerName")
-               // UnityPlayer.UnitySendMessage("PlayerNameChange","changeName",intent.extras!!.getString("playerName").toString())
-        }
+    }
     }
 
     override fun showMainActivity() {
         val intent = Intent(this, MainActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_REORDER_TO_FRONT or Intent.FLAG_ACTIVITY_SINGLE_TOP
+        intent.putExtra("setUserStatus", myUserStatus)
         startActivity(intent)
     }
     override fun setUserStatus(userStatus: String) {
@@ -73,9 +73,12 @@ class MainUnityActivity : OverrideUnityActivity() {
             myButton.y = 0f
             myButton.setOnClickListener {
                 Log.d("button",playername)
-                UnityPlayer.UnitySendMessage("PlayerName","changeName",playername.toString()) }
+                changePlayerName() }
             layout.addView(myButton, 300, 200)
         }
+    }
+    fun changePlayerName(){
+        UnityPlayer.UnitySendMessage("PlayerName","changeName",playername.toString())
     }
 
 }

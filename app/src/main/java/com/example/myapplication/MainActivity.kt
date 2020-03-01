@@ -68,16 +68,19 @@ class MainActivity : AppCompatActivity(), ArViewFragment.UnityRunning {
             when (intent.extras!!.getString("setUserStatus")) {
                 "Completed" -> {
                     toggleState("map")
+                    status.text = "Player status: Game completed!"
                     arViewFragment = ArViewFragment.newInstance("Player status: Game completed!")
                     myManager = supportFragmentManager
                     myTransaction = myManager.beginTransaction()
-                    myTransaction.add(R.id.root_frame, arViewFragment)
+                    myTransaction.replace(R.id.root_frame, arViewFragment)
                     myTransaction.commit()}
-                "Trying" -> {toggleState("map")
+                "Trying" -> {
+                    toggleState("map")
+                    status.text = "Player status: Still trying yet failing!"
                     arViewFragment = ArViewFragment.newInstance("Player status: Still trying yet failing!")
                     myManager = supportFragmentManager
                     myTransaction = myManager.beginTransaction()
-                    myTransaction.add(R.id.root_frame, arViewFragment)
+                    myTransaction.replace(R.id.root_frame, arViewFragment)
                     myTransaction.commit()
                 }
                 else -> {

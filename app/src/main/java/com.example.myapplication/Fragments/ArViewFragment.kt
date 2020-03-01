@@ -33,8 +33,9 @@ class ArViewFragment: Fragment() {
                               savedInstanceState: Bundle?): View? {
         ctx = activity as Context
         val view = inflater.inflate(R.layout.ar_fragment ,container, false )
-        val model = arguments!!.getSerializable(AR) as String
-        view.status.text = model
+        val model = arguments!!.getSerializable(AR)
+        Log.d("Status text",model.toString())
+        view.status.text = model.toString()
         return view
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
